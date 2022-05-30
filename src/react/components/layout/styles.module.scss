@@ -1,0 +1,13 @@
+.layout {
+  .logo {
+    display: flex;
+    padding-left: 160px;
+    padding-top: 45px;
+  }
+
+  .child {
+    height: 70%;
+    justify-content: center;
+    vertical-align: center;
+  }
+}

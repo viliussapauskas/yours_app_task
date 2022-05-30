@@ -1,0 +1,13 @@
+.layout {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom left, #040c28, transparent 150%),
+    radial-gradient(ellipse at bottom right, #040c28, transparent 150%),
+    radial-gradient(ellipse at top left, #cf0dff 1%, transparent),
+    radial-gradient(ellipse at top right, #0dffe2 1%, transparent) repeat;
+
+  .container {
+    // justify-content: center;
+    // position: relative;
+    // top: 20%;
+  }
+}
