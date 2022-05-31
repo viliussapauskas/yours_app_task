@@ -17,11 +17,15 @@ export const IssuesPage = () => {
 
   return (
     <Layout style={styles.layout}>
-      <div>
-        {status === "failed" && <h1>Error occoured</h1>}
-        {status === "loading" && <h1>Loading...</h1>}
+      <div data-testid="issues-page">
+        {status === "failed" && (
+          <h1 data-testid="issues-error">Error occoured</h1>
+        )}
+        {status === "loading" && (
+          <h1 data-testid="issues-loading">Loading...</h1>
+        )}
         {status === "idle" && value && (
-          <div className={styles.pageContainer}>
+          <div data-testid="issues-content" className={styles.pageContainer}>
             <div className={styles.titleContainer}>
               <span className={styles.title}>Issues</span>
               <span className={styles.numberOfIssues}>{value.length}</span>
@@ -29,7 +33,7 @@ export const IssuesPage = () => {
             <div className={styles.contentContainer}>
               <HeaderRow openIssues={value.length} />
               {value.map((x, index) => (
-                <div key={x.id}>
+                <div data-testid="issues-list-item" key={x.id}>
                   <ContentRow
                     payload={x}
                     isLastRow={value.length === index + 1}
