@@ -1,6 +1,6 @@
-import { IssuesState } from "./types";
+import { IssuesState } from './types'
 
 export const initialState: IssuesState = {
-  value: undefined,
-  status: "idle",
-};
+    value: undefined,
+    status: 'idle',
+}

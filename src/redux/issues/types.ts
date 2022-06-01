@@ -1,22 +1,22 @@
 export interface Issue {
-  id: number;
-  number: number;
-  title?: string;
-  user?: User;
-  createdAt: string;
-  commentsCount: number;
+    id: number
+    number: number
+    title?: string
+    user?: User
+    createdAt: string
+    commentsCount: number
 }
 
 interface User {
-  login: string;
+    login: string
 }
 
 export interface IssuesState {
-  value?: Issue[];
-  status: "idle" | "loading" | "failed";
+    value?: Issue[]
+    status: 'idle' | 'loading' | 'failed'
 }
 
 export interface IssuesPayload {
-  username: string;
-  repository: string;
+    username: string
+    repository: string
 }
