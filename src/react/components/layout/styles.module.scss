@@ -1,5 +1,6 @@
 .layout {
-  height: 100%;
+  overflow: auto;
+  height: inherit;
   .logo {
     display: flex;
     padding: 46px 0px;
