@@ -10,10 +10,14 @@ interface LayoutProps {
 
 export const Layout: FC<LayoutProps> = ({ style, children }) => {
   return (
-    //   init styles + intefaces styles
-    <div className={classNames(styles.layout, style && style)}>
+    <div
+      data-testid="layout-container"
+      className={classNames(styles.layout, style && style)}
+    >
       <div className={styles.logo}>{<Logo />}</div>
-      <div className={styles.child}>{children}</div>
+      <div data-testid="layout-child-container" className={styles.child}>
+        {children}
+      </div>
     </div>
   );
 };
