@@ -14,7 +14,9 @@ export const HeaderRow: FC<HeaderRowProps> = ({ openIssues }) => {
         </span>
       </div>
       <div className={styles.contentSection}>
-        <span className={styles.title}>{openIssues} Open</span>
+        <span data-testid="header-row-content" className={styles.title}>
+          {openIssues} Open
+        </span>
       </div>
     </div>
   );
