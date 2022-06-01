@@ -12,7 +12,7 @@
       display: inline-block;
       width: 18px;
       height: 18px;
-      border: 1px solid #0dd9a8;
+      border: 1px solid white;
       position: relative;
 
       .dot {
@@ -20,7 +20,7 @@
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background: #0dd9a8;
+        background: white;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -49,26 +49,4 @@
       opacity: 0.5;
     }
   }
-
-  .commentSection {
-    flex: none;
-    margin-left: 10px;
-
-    .commentsCount {
-      position: absolute;
-      padding-left: 6px;
-      width: 8px;
-      height: 15px;
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      color: #e6e7e9;
-      opacity: 0.5;
-    }
-  }
-}
-
-.lastContainer {
-  border-bottom: none;
 }
