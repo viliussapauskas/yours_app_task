@@ -1,1 +1,1 @@
-export { isFormValid } from "./validator";
+export { isFormValid } from './validator'

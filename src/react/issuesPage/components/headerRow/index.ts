@@ -1,1 +1,1 @@
-export { HeaderRow } from "./headerRow";
+export { HeaderRow } from './headerRow'

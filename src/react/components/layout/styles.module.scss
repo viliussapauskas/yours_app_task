@@ -1,15 +1,15 @@
 .layout {
-  overflow: auto;
-  height: inherit;
-  .logo {
-    display: flex;
-    padding: 46px 0px;
-    padding-left: 20%;
-  }
+    overflow: auto;
+    height: inherit;
+    .logo {
+        display: flex;
+        padding: 46px 0px;
+        padding-left: 20%;
+    }
 
-  .child {
-    height: 70%;
-    justify-content: center;
-    vertical-align: center;
-  }
+    .child {
+        height: 70%;
+        justify-content: center;
+        vertical-align: center;
+    }
 }
