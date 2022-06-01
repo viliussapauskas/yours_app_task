@@ -4,6 +4,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { loadIssuesAsync } from "../../redux/issues";
 import { Button, Layout, TextInput } from "../components";
 import styles from "./styles.module.scss";
+import { isFormValid } from "./validator";
 
 const initFormState = {
   value: "",
@@ -17,40 +18,26 @@ export const HomePage: FC = () => {
   const [username, setUsername] = useState(initFormState);
   const [repository, setRepository] = useState(initFormState);
 
-  const isFormValid = () => {
-    let errorExists = false;
-    if (!!!username.value) {
-      setUsername({
-        ...username,
-        hasErrors: true,
-      });
-      errorExists = true;
-    }
-
-    if (!!!repository.value) {
-      setRepository({
-        ...repository,
-        hasErrors: true,
-      });
-      errorExists = true;
-    }
-
-    return !errorExists;
-  };
-
   const onSubmit = () => {
-    if (!isFormValid()) {
-      return;
-    }
-
-    dispatch(
-      loadIssuesAsync({
-        username: username.value,
-        repository: repository.value,
+    if (
+      !isFormValid({
+        setRepository,
+        setUsername,
+        repository,
+        username,
       })
-    );
+    ) {
+      return;
+    } else {
+      dispatch(
+        loadIssuesAsync({
+          username: username.value,
+          repository: repository.value,
+        })
+      );
 
-    navigate("/issues");
+      navigate("/issues");
+    }
   };
 
   const handleUsernameSet = (value: string) => {
@@ -68,7 +55,7 @@ export const HomePage: FC = () => {
 
   return (
     <Layout style={styles.layout}>
-      <div className={styles.container}>
+      <div data-testid="home-page" className={styles.container}>
         <div className={styles.inputsContainer}>
           <TextInput
             setValue={handleUsernameSet}

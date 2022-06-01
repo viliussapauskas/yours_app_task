@@ -7,7 +7,12 @@ interface ButtonProps {
 
 export const Button: FC<ButtonProps> = ({ onClick }) => {
   return (
-    <button className={styles.button} type={"button"} onClick={() => onClick()}>
+    <button
+      data-testid="button-component"
+      className={styles.button}
+      type={"button"}
+      onClick={() => onClick()}
+    >
       Show issues
     </button>
   );
